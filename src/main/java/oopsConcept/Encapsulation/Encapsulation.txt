@@ -1,0 +1,49 @@
+Encapsulation is one of the four fundamental Object-Oriented Programming (OOP) concepts,
+along with inheritance, polymorphism, and abstraction. It refers to the bundling of data (attributes) and the methods
+(functions or procedures) that operate on the data into a single unit known as a class. The idea is to restrict access to
+some of an object's components and only expose what is necessary for the outside world to interact with the object.
+
+
+The main goals of encapsulation are:
+
+1. Data Hiding: Encapsulation hides the internal details of an object and restricts direct access to its internal state.
+The internal state is kept private to the class, and external entities can only interact with the object through
+well-defined interfaces (public methods).
+2.
+Modularity: Encapsulation promotes modularity by encapsulating the implementation details within a class.
+ This makes it easier to understand, maintain, and modify code since changes to the internal implementation
+ do not affect the external code that uses the class.
+
+ In a class with encapsulation, you typically have private attributes and public methods.
+ The private attributes are not directly accessible from outside the class, and access to them is controlled through
+ public methods. This allows the class to enforce rules and validations on how the data is accessed or modified.
+
+ Here's a simple example in Java:
+
+ public class Car {
+     // Private attributes
+     private String model;
+     private int year;
+
+     // Public methods to access and modify the attributes
+     public String getModel() {
+         return model;
+     }
+
+     public void setModel(String model) {
+         this.model = model;
+     }
+
+     public int getYear() {
+         return year;
+     }
+
+     public void setYear(int year) {
+         // Validation can be added here
+         if (year > 0) {
+             this.year = year;
+         } else {
+             System.out.println("Invalid year");
+         }
+     }
+ }
