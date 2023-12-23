@@ -57,5 +57,5 @@ public class PrivateExample {
 Use Case:
 The private access modifier is the most restrictive and is used when you want to restrict the visibility of a field
 or method to only within the class where it is declared. This is important for encapsulation and information Hiding.
-Hi
+
 
