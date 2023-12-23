@@ -5,11 +5,11 @@ public class Automotive {
 
     public static void main(String[] args) {
         // Creating a car and displaying its information
-        Car car = new Car("Toyota", "Camry", 2022, 4);
+        Car car = new Car("Toyota", "Camry", 2021, 4);
         car.displayCarInfo();
 
         // Creating a motorcycle and displaying its information
-        Motorcycle motorcycle = new Motorcycle("Honda", "CBR500R", 2022, true);
+        Motorcycle motorcycle = new Motorcycle("Honda", "CBR500R", 2023, true);
         motorcycle.displayMotorcycleInfo();
 
         // Creating a car with an engine and demonstrating engine methods
