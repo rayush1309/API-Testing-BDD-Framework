@@ -1,0 +1,94 @@
+final and finally are two distinct keywords in Java with different purposes.
+
+final:
+
+final is used as a modifier for different entities, such as variables, methods, and classes.
+
+When used with a variable, it indicates that the variable's value cannot be changed (it becomes a constant).
+When used with a method, it indicates that the method cannot be overridden in subclasses.
+When used with a class, it indicates that the class cannot be subclassed.
+Example of final variable:
+final int x = 10;
+Example of final method:
+class Parent {
+    final void display() {
+        System.out.println("This method is final and cannot be overridden.");
+    }
+}
+Example of final class:
+final class FinalClass {
+    // Class implementation
+    System.out.println("This method is final and cannot be Inherited.");
+}
+
+2.
+finally:
+
+finally is used in a try-catch block to define a block of code that will be executed whether an exception is thrown or not.
+This block is often used for cleanup operations, such as closing resources (files, sockets, database connections)
+or releasing acquired locks.
+The code inside the finally block is guaranteed to run, regardless of whether an exception occurs or not.
+
+Example of finally block:
+
+try {
+    // Code that may throw an exception
+} catch (Exception e) {
+    // Exception handling
+} finally {
+    // Code that will always be executed
+    // This is often used for cleanup operations
+}
+
+In summary, final is a modifier used for variables, methods, and classes to indicate immutability or prevent further
+modification, while finally is a block used in exception handling to ensure that a specific block of code is executed
+regardless of whether an exception is thrown or not.
+
+
+# Throwable vs Error vs Exception ;
+Note : Throwable is superclass of Error and Exception ;
+in Catch Block if we write Throwable it will handle both error and Exception
+but if we write Exception it will not handle error and Vice versa.
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+In Java, Throwable is the superclass of both Error and Exception.
+Understanding the hierarchy is crucial for effective exception handling.
+1. Throwable:
+
+   It is the root class for all exceptions and errors in Java.
+   It has two main subclasses: Error and Exception.
+   Example:
+   try {
+       // Some code that may throw a Throwable
+   } catch (Throwable t) {
+       // Handle the Throwable
+   }
+2.
+Error:
+
+Subclass of Throwable.
+Represents serious errors that are typically beyond the control of the application, such as OutOfMemoryError.
+Errors are generally not caught or handled by the application code because they indicate severe issues
+that might not be recoverable.
+Example:
+try {
+    // Some code that may throw an Error
+} catch (Error e) {
+    // Handle the Error (this is generally not common)
+}
+
+3.
+Exception:
+
+Subclass of Throwable.
+Represents exceptional conditions that a program should catch and handle, such as IOException, NullPointerException, etc.
+Exceptions are intended to be caught and handled by the application code.
+Example:
+try {
+    // Some code that may throw an Exception
+} catch (Exception e) {
+    // Handle the Exception
+}
+
+

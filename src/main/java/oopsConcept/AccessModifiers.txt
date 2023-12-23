@@ -1,0 +1,61 @@
+1. Public:
+Example:
+public class PublicExample {
+    public int publicField;
+
+    public void publicMethod() {
+        // Method code
+    }
+}
+
+Use Case:
+The public access modifier is used when you want a class, field, or method to be accessible from any other class.
+For example, a class representing utility functions might have public methods that can be used by any other part of the program.
+
+2. Protected:
+
+Example:
+public class ProtectedExample {
+    protected int protectedField;
+
+    protected void protectedMethod() {
+        // Method code
+    }
+}
+
+Use Case:
+The protected access modifier allows a member to be accessed within its own package and by subclasses in other packages.
+This is useful in scenarios where you want a field or method to be available to subclasses for extension
+but not to the entire application.
+
+3. Defagult (Package-Private):
+Example:
+class DefaultExample {
+    int defaultField;
+
+    void defaultMethod() {
+        // Method code
+    }
+}
+
+Use Case:
+The default (package-private) access modifier is used when no access modifier is specified.
+Members with default access are accessible only within the same package.
+This provides a level of encapsulation within a package, and these members are not accessible outside the package.
+
+4. Private:
+
+Example:
+public class PrivateExample {
+    private int privateField;
+
+    private void privateMethod() {
+        // Method code
+    }
+}
+
+Use Case:
+The private access modifier is the most restrictive and is used when you want to restrict the visibility of a field
+or method to only within the class where it is declared. This is important for encapsulation and information Hiding.
+Hi
+

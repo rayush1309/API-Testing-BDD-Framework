@@ -1,0 +1,96 @@
+In Java, throw and throws are related concepts, but they serve different purposes.
+
+1. throw:
+
+Usage:
+--> throw is used to explicitly throw an exception in your code.
+Example:
+public void processNumber(int number) {
+    if (number < 0) {
+        throw new IllegalArgumentException("Number must be non-negative");
+    }
+    // rest of the code
+}
+Explanation:
+In this example, the processNumber method throws an IllegalArgumentException if the provided number is negative.
+This allows the developer to indicate that there's an issue with the input.
+
+2. Usage:
+-->   throws is used in a method signature to declare that the method might throw certain types of exceptions.
+Example :
+public void readFile(String filePath) throws FileNotFoundException {
+    // code that may throw FileNotFoundException
+}
+Explanation:
+In this example, the readFile method declares that it may throw a FileNotFoundException.
+It indicates to the calling code that this method may encounter this exception, and the calling code should handle it appropriately.
+
+# In Java, both try-catch and throws are mechanisms for handling exceptions, but they serve different purposes.
+try-catch Block:
+
+Usage:
+3. try-catch is used to handle exceptions within a specific block of code.
+Example:
+public void exampleMethod() {
+    try {
+        // Code that may throw an exception
+    } catch (SomeException e) {
+        // Handle the exception
+    }
+}
+
+Explanation:
+In this example, the code inside the try block is monitored for exceptions.
+If an exception of type SomeException occurs, it is caught in the catch block,
+allowing you to handle the exception gracefully.
+
+
+4. throws Clause:
+
+   Usage:
+   throws is used in a method signature to declare that the method may throw certain types of exceptions
+   but does not handle them within the method.
+   Example:
+   public void exampleMethod() throws SomeException {
+       // Code that may throw SomeException
+   }
+Explanation:
+In this example, the method exampleMethod declares that it may throw an exception of type SomeException.
+ However, it does not handle the exception within the method. It leaves the responsibility of handling the exception to the
+  calling code.
+
+
+  # When to Use try-catch and throws:
+
+>> try-catch:
+
+   Use try-catch when you want to handle exceptions within a specific method.
+   It is suitable for situations where you can take corrective actions or provide alternative
+   logic in response to an exception.
+   code:
+
+   public void processFile(String filePath) {
+       try {
+           // Code that may throw FileNotFoundException
+       } catch (FileNotFoundException e) {
+           // Handle the exception (e.g., log, display an error message, etc.)
+       }
+   }
+
+>> throws:
+
+   Use throws when you want to declare that a method may throw certain types of exceptions but
+   leave the handling to the calling code.
+
+   It is suitable when the method itself cannot handle the exception and wants to inform the caller
+   about the potential exceptions that may occur.
+
+   Example:
+   public void readFile(String filePath) throws FileNotFoundException {
+       // Code that may throw FileNotFoundException
+   }
+
+
+
+
+g
