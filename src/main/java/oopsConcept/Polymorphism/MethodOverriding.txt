@@ -1,0 +1,99 @@
+Can we change return Type While  performing Overriding ?
+Ans- No- when Return Types Are primitive
+Ans - Yes- in case of return type as class name/ covariant
+covariant- the Return type is class Name and There is parent-child Relationship between those classes
+
+Explanation:-
+1. Method Overriding Basics:
+When a subclass provides a specific implementation for a method that is already defined in its superclass,
+ it's called method overriding. In Java, the overriding method in the subclass must have the same name, return type,
+ and parameter types as the method in the superclass.
+ 2. Covariant Return Types:
+Covariant return types allow the overriding method in a subclass to have a more specific return type than the overridden method
+in the superclass. This is possible when the return type in the subclass is a subtype of the return type in the superclass. It's
+applicable when the return type is a class (reference type), not a primitive type.
+
+3. Example with Covariant Return Types:
+Let's consider an example involving a superclass Animal and a subclass Dog. The Animal class has a
+method getSound() that returns an instance of the class Sound. The Dog class overrides this method and
+returns an instance of the more specific class BarkSound, which is a subtype of Sound.
+
+// Base class representing an animal sound
+class Sound {
+    // Method to get the sound
+    Sound getSound() {
+        return new Sound();
+    }
+}
+
+// Subclass representing a dog sound
+class BarkSound extends Sound {
+    // Overriding the getSound method with a more specific return type
+    @Override
+    BarkSound getSound() {
+        return new BarkSound();
+    }
+}
+
+
+4. Covariant Return Types and Primitives:
+Covariant return types apply to reference types (class names) and not to primitive types.
+If the return type is a primitive type (e.g., int, double), then the return type cannot be changed while performing overriding.
+
+Summary:
+Covariant Return Types: Possible when the return type is a class name, and there is a parent-child relationship between classes.
+Primitives: Return types cannot be changed for primitive types.
+Keep in mind that covariant return types enhance the flexibility of method overriding,
+allowing subclasses to return more specific types than their superclasses, contributing to a more expressive and
+type-safe code structure.
+
+public class CovariantReturnTypeBankExample {
+    public static void main(String[] args) {
+        // Create instances of different banks
+        Bank genericBank = new Bank();
+        AxisBank axisBank = new AxisBank();
+        HDFCBank hdfcBank = new HDFCBank();
+        SBIBank sbiBank = new SBIBank();
+
+        // Get and display interest rates for each bank
+        System.out.println("Generic Bank Interest Rate: " + genericBank.getInterestRate() + "%");
+        System.out.println("Axis Bank Interest Rate: " + axisBank.getInterestRate() + "%");
+        System.out.println("HDFC Bank Interest Rate: " + hdfcBank.getInterestRate() + "%");
+        System.out.println("SBI Bank Interest Rate: " + sbiBank.getInterestRate() + "%");
+    }
+
+    // Base class representing a generic bank
+    static class Bank {
+        // Method to get the interest rate set by the bank
+        Number getInterestRate() {
+            return 5.0; // A generic interest rate
+        }
+    }
+
+    // Subclass representing Axis Bank
+    static class AxisBank extends Bank {
+        // Overriding the getInterestRate method with a more specific return type
+        @Override
+        Double getInterestRate() {
+            return 6.75; // Specific interest rate for Axis Bank
+        }
+    }
+
+    // Subclass representing HDFC Bank
+    static class HDFCBank extends Bank {
+        // Overriding the getInterestRate method with a more specific return type
+        @Override
+        Double getInterestRate() {
+            return 7.0; // Specific interest rate for HDFC Bank
+        }
+    }
+
+    // Subclass representing SBI (State Bank of India)
+    static class SBIBank extends Bank {
+        // Overriding the getInterestRate method with a more specific return type
+        @Override
+         Integer getInterestRate() {
+            return 6; // Specific interest rate for SBI
+        }
+    }
+}
