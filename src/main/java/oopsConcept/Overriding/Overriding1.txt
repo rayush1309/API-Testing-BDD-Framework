@@ -1,0 +1,114 @@
+Question can we change the access modifier when overriding?
+Ans: Yes, but can not reduce the visibility of inherited Parent methods.
+ when overriding a method in a subclass, you can change the access modifier of the overridden method,
+ but there are some rules to follow:
+
+ 1. Access Level Increase:
+ You can increase the access level of the overriding method. For example, if the overridden method
+ in the superclass has protected access, you can override it in the subclass with public access.
+
+Eg:
+class Superclass {
+    protected void myMethod() {
+        System.out.println("Protected method in the superclass");
+    }
+}
+
+class Subclass extends Superclass {
+    // Overriding with public access (increasing access level)
+    public void myMethod() {
+        System.out.println("Public method in the subclass");
+    }
+}
+
+2.Same Access Level:
+ You can keep the same access level in the overriding method.
+ eg:
+
+ class Superclass {
+     void myMethod() {
+         System.out.println("Default (package-private) method in the superclass");
+     }
+ }
+
+ class Subclass extends Superclass {
+     // Overriding with the same package-private access level
+     void myMethod() {
+         System.out.println("Default (package-private) method in the subclass");
+     }
+ }
+
+ 3. No Access Level Decrease: You cannot override a method and decrease its access level. For example,
+ if the overridden method in the superclass has public access, you cannot override it with protected or private access in the
+ subclass.
+
+ class Superclass {
+     public void myMethod() {
+         System.out.println("Public method in the superclass");
+     }
+ }
+
+ class Subclass extends Superclass {
+     // This will result in a compilation error
+     // Cannot reduce the visibility of the inherited method from Superclass
+     // private void myMethod() { ... }
+ }
+
+
+In summary, when overriding a method:
+
+You can increase or maintain the same access level.
+You cannot decrease the access level.
+This rule ensures that the subclass provides at least the same level of visibility for the overridden method as the superclass.
+
+
+Question : Can we Override the Static Methods:
+Ans- NO - Method Hiding
+
+
+In Java, static methods are associated with the class itself rather than with instances of the class.
+They are resolved at compile-time and are not subject to polymorphism. Due to their nature, the concept of method overriding,
+which is a form of polymorphism, does not apply to static methods. Instead, static methods in a subclass are said to hide the
+static methods in the superclass, and this is known as method hiding.
+
+Here are some reasons why static methods cannot be overridden:
+
+1. Compile-Time Resolution: Static methods are resolved at compile-time based on the reference type, not at runtime
+ based on the actual object type.This is in contrast to instance methods, which are resolved at runtime.
+
+ 2.Class-Level Association: Static methods belong to the class itself, and they are shared among all instances of the class.
+ They are invoked using the class name, not an instance reference. This class-level association makes the concept of dynamic
+ dispatch (which is essential for method overriding) irrelevant for static methods.
+
+ 3.No Inheritance of Static Members:
+  Inheritance in Java applies to instance members, not static members. Subclasses inherit instance variables and methods,
+  but they don't inherit static members. Subclasses can declare their own static members with the same signature,
+  but this is not considered overriding.
+
+  Here's an example illustrating method hiding with static methods:
+
+  class Superclass {
+      static void staticMethod() {
+          System.out.println("Static method in the superclass");
+      }
+  }
+
+  class Subclass extends Superclass {
+      static void staticMethod() {
+          System.out.println("Static method in the subclass");
+      }
+  }
+
+  public class Main {
+      public static void main(String[] args) {
+          Superclass.staticMethod();  // Calls the static method in the superclass
+          Subclass.staticMethod();    // Calls the static method in the subclass
+      }
+  }
+
+In this example, Subclass.staticMethod() does not override Superclass.staticMethod().
+Instead, it hides it, and the method called is determined at compile-time based on the reference type.
+
+
+Parent p = new Child();
+p.show()--> it will call the Parent class
