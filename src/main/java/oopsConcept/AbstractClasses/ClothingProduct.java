@@ -6,6 +6,7 @@ public class ClothingProduct extends Product {
 
     // Constructor
     public ClothingProduct(String name, double price, String size) {
+        //super(name, price);
         super(name, price);
         this.size = size;
     }

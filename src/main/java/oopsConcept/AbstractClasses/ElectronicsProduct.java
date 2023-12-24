@@ -11,16 +11,19 @@ public class ElectronicsProduct extends Product {
     }
 
     // Implementation of the abstract method to get the product type
+
     @Override
+
     public String getProductType() {
         return "Electronics";
     }
+
 
     // Implementation of the abstract method to calculate the discounted price
     @Override
     public double calculateDiscount() {
         // Specific logic for calculating discount for electronics products
-        return getPrice() * 0.1; // 10% discount
+        return getPrice() * 0.2; // 20% discount
     }
 
     // Additional methods specific to ElectronicsProduct
