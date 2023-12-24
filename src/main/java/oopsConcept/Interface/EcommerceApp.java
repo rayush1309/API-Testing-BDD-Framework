@@ -6,8 +6,8 @@ public class EcommerceApp {
         ShoppingCart cart = new ShoppingCart();
 
         // Adding items to the cart
-        cart.addItemToCart("Product Mobile", 100, 2);
-        cart.addItemToCart("Product Laptop", 109, 1);
+        cart.addItemToCart("Mobile", 50, 2);
+        cart.addItemToCart("Laptop", 100, 1);
 
         // Calculating total price
         double totalPrice = cart.calculateTotalPrice();
