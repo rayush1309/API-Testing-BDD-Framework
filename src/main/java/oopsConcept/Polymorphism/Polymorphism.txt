@@ -1,0 +1,116 @@
+Polymorphism:
+Polymorphism is derived from two Greek words: "poly" (meaning many) and "morphism" (meaning forms or shapes).
+In the context of programming, polymorphism allows objects of different types to be treated as objects of a common type.
+There are two main types of polymorphism in Java: compile-time polymorphism (overloading) and run-time polymorphism (overriding).
+
+1. Compile-Time Polymorphism (Overloading):
+ Compile-time polymorphism, also known as method overloading, occurs when there are multiple methods in the same
+ class with the same name but different parameters (different signatures). The decision about which method to call is made
+ at compile time based on the method signature.
+
+ Example of method overloading:
+ class Example {
+     // Overloaded method with different parameters
+     void display(int num) {
+         System.out.println("Displaying integer: " + num);
+     }
+
+     // Overloaded method with a different type of parameter
+     void display(String text) {
+         System.out.println("Displaying text: " + text);
+     }
+ }
+
+In the example above, there are two display methods with different parameters.
+The compiler determines which method to call based on the type and number of arguments passed during the method call.
+
+2. Run-Time Polymorphism (Overriding):
+Run-time polymorphism, also known as method overriding, occurs when a subclass provides a specific implementation for
+ a method that is already defined in its superclass. The decision about which method to call is made at runtime,
+ and it allows for the use of the same method name in both the superclass and the subclass.
+
+Example of method overriding:
+class Animal {
+    void makeSound() {
+        System.out.println("Generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    // Overriding the makeSound method in the subclass
+    void makeSound() {
+        System.out.println("Bark! Bark!");
+    }
+}
+
+Certainly! Let's break down the concept of polymorphism, specifically focusing on compile-time polymorphism (overloading) and run-time polymorphism (overriding).
+
+Polymorphism:
+Polymorphism is derived from two Greek words: "poly" (meaning many) and "morphism" (meaning forms or shapes). In the context of programming, polymorphism allows objects of different types to be treated as objects of a common type. There are two main types of polymorphism in Java: compile-time polymorphism (overloading) and run-time polymorphism (overriding).
+
+1. Compile-Time Polymorphism (Overloading):
+Compile-time polymorphism, also known as method overloading, occurs when there are multiple methods in the same class with the same name but different parameters (different signatures). The decision about which method to call is made at compile time based on the method signature.
+
+Example of method overloading:
+
+java
+Copy code
+class Example {
+    // Overloaded method with different parameters
+    void display(int num) {
+        System.out.println("Displaying integer: " + num);
+    }
+
+    // Overloaded method with a different type of parameter
+    void display(String text) {
+        System.out.println("Displaying text: " + text);
+    }
+}
+In the example above, there are two display methods with different parameters. The compiler determines which method to call based on the type and number of arguments passed during the method call.
+
+2. Run-Time Polymorphism (Overriding):
+Run-time polymorphism, also known as method overriding, occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. The decision about which method to call is made at runtime, and it allows for the use of the same method name in both the superclass and the subclass.
+
+Example of method overriding:
+
+java
+Copy code
+class Animal {
+    void makeSound() {
+        System.out.println("Generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    // Overriding the makeSound method in the subclass
+    void makeSound() {
+        System.out.println("Bark! Bark!");
+    }
+}
+In this example, the Dog class overrides the makeSound method defined in the Animal class. When calling makeSound on a Dog object
+, the overridden method in the Dog class will be executed.'
+
+Questions and Clarifications:
+Method Overloading with Different Return Type:
+
+No, you cannot achieve method overloading by changing only the return type.
+Overloading is based on the method signature (parameter types and number), and changing only the return type would result in
+a compilation error.
+
+Ambiguity in Overloading:
+
+If there is ambiguity, such as having methods with parameter types like byte, int, and double, the compiler
+may not be able to determine the correct method to call, leading to a compilation error.
+
+
+Overloading the main Method:
+
+Yes, you can overload the main method in Java. However, the arguments should be different.
+ This allows you to have multiple entry points to your program. If the main methods have the same parameters,
+ it will result in ambiguity, and the JVM won't know which main method to invoke.
+In summary, polymorphism in Java provides flexibility in method invocation, either at compile time (overloading)
+ or at runtime (overriding), allowing for a more versatile and expressive code structure.
+
+
+
+
