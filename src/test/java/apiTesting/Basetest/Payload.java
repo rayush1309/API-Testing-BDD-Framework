@@ -20,4 +20,29 @@ public class Payload {
                 "    \"language\": \"French-IN\"\n" +
                 "}";
     }
+    public static  String coursePrice(){
+        return "{\n" +
+                "  \"dashboard\": {\n" +
+                "    \"purchaseAmount\": 910,\n" +
+                "    \"website\": \"rahulshettyacademy.com\"\n" +
+                "  },\n" +
+                "  \"courses\": [\n" +
+                "    {\n" +
+                "      \"title\": \"Selenium Java\",\n" +
+                "      \"price\": 50,\n" +
+                "      \"copies\": 6\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"title\": \"Core Java\",\n" +
+                "      \"price\": 40,\n" +
+                "      \"copies\": 4\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"title\": \"REST API\",\n" +
+                "      \"price\": 45,\n" +
+                "      \"copies\": 10\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}\n";
+    }
 }
