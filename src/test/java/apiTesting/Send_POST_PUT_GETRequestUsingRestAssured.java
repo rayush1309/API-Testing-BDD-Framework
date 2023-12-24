@@ -1,11 +1,13 @@
 package apiTesting;
 
 import apiTesting.file.Payload;
+import apiTesting.file.ReusableMethods;
 import io.restassured.RestAssured;
 
 import static io.restassured.RestAssured.given;
 
 import io.restassured.path.json.JsonPath;
+import org.testng.Assert;
 
 import static org.hamcrest.Matchers.*;
 
@@ -70,9 +72,10 @@ public class Send_POST_PUT_GETRequestUsingRestAssured {
                 .extract()
                 .response()
                 .asString();
-        JsonPath jp = new JsonPath(getPlaceResponse);//convert String to Json
+        JsonPath jp=ReusableMethods.rawToJson(getPlaceResponse);
         String actualAddress= jp.getString("address");
         System.out.println(actualAddress);
+        Assert.assertEquals(actualAddress,newAddress);
         // Add Place --> Update Place with New Address --> Get Place to Validate New Address is present in the Response
 
 
