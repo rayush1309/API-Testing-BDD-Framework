@@ -23,6 +23,12 @@ To perform method overriding, the overridden method in the subclass must have th
 Additionally, the method in the subclass must have the same method signature, which includes the method name, return type,
 and parameter types.
 
+
+# Can we change return Type While  performing Overriding ?
+Ans- No- when Return Types Are primitive
+Ans - Yes- in case of return type as class name/ covariant
+covariant- the Return type is class Name and There is parent-child Relationship between those classes
+
  */
 package oopsConcept.Polymorphism;
 
