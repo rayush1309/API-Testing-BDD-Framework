@@ -1,4 +1,4 @@
-package apiTesting.file;
+package apiTesting.Basetest;
 
 import io.restassured.path.json.JsonPath;
 

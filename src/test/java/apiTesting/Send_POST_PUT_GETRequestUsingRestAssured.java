@@ -1,7 +1,7 @@
 package apiTesting;
 
-import apiTesting.file.Payload;
-import apiTesting.file.ReusableMethods;
+import apiTesting.Basetest.Payload;
+import apiTesting.Basetest.ReusableMethods;
 import io.restassured.RestAssured;
 
 import static io.restassured.RestAssured.given;
