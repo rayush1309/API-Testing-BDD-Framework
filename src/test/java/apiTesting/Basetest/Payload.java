@@ -1,5 +1,6 @@
 package apiTesting.Basetest;
 
+
 public class Payload {
 
     public static String RequestBody(){
@@ -44,5 +45,14 @@ public class Payload {
                 "    }\n" +
                 "  ]\n" +
                 "}\n";
+    }
+    public static String addBook(){
+        String addBookRequestBody= "{\n" +
+                "    \"name\": \"REST API Automation with Java\",\n" +
+                "    \"isbn\": \"test\",\n" +
+                "    \"aisle\": \"28788\",\n" +
+                "    \"author\": \"Ayush Raj\"\n" +
+                "}";
+        return addBookRequestBody;
     }
 }
