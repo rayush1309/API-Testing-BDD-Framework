@@ -22,11 +22,12 @@ public class validateAPIViaStaticJson {
 
         // Read the content of the JSON file as a String
         String jsonContent = new String(Files.readAllBytes(Paths.get("resources/addPlace.json")));
-
+        // given: all input details
         String response = given().log().all()
                 .queryParam("key", "qaclick123")
                 .header("Content-Type", "application/json")
                 .body(jsonContent) // Use the String content instead of bytes
+                //when - submit all the API - resource , Http Methos
                 .when()
                 .post("/maps/api/place/add/json")
                 // Response Validation --Then
