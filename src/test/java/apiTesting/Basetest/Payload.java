@@ -3,7 +3,7 @@ package apiTesting.Basetest;
 
 public class Payload {
 
-    public static String RequestBody(){
+    public static String RequestBody() {
         return "{\n" +
                 "    \"location\": {\n" +
                 "        \"lat\": -38.383494,\n" +
@@ -21,7 +21,8 @@ public class Payload {
                 "    \"language\": \"French-IN\"\n" +
                 "}";
     }
-    public static  String coursePrice(){
+
+    public static String coursePrice() {
         return "{\n" +
                 "  \"dashboard\": {\n" +
                 "    \"purchaseAmount\": 910,\n" +
@@ -46,11 +47,12 @@ public class Payload {
                 "  ]\n" +
                 "}\n";
     }
-    public static String addBook(){
-        String addBookRequestBody= "{\n" +
+
+    public static String addBook(String isbn, String aisle) {
+        String addBookRequestBody = "{\n" +
                 "    \"name\": \"REST API Automation with Java\",\n" +
-                "    \"isbn\": \"test\",\n" +
-                "    \"aisle\": \"28788\",\n" +
+                "    \"aisle\": \"" + aisle + "\",\n" +
+                "    \"isbn\": \"" + isbn + "\",\n" +
                 "    \"author\": \"Ayush Raj\"\n" +
                 "}";
         return addBookRequestBody;
