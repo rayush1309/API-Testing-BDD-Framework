@@ -46,6 +46,7 @@ public class CovariantReturnTypeBankExample {
         // Overriding the getInterestRate method with a more specific return type
         @Override
          Integer getInterestRate() {
+
             return 6; // Specific interest rate for SBI
         }
     }

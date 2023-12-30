@@ -1,0 +1,39 @@
+{
+  "instructor": "Ayush Raj",
+  "url": "https://www.corporatebharti.com",
+  "services": "Project",
+  "courses": {
+    "webAutomation": [
+      {
+        "courseTitle": "Selenium Course",
+        "price": 199.99
+      },
+      {
+        "courseTitle": "Cypress",
+        "price": 99.99
+      },
+      {
+        "courseTitle": "playRight",
+        "price": 9.99
+      }
+    ],
+    "api": [
+      {
+        "courseTitle": "Rest API",
+        "price": 129.99
+      },
+      {
+        "courseTitle": "SOAP UI",
+        "price": 135.89
+      }
+    ],
+    "mobile": [
+      {
+        "courseTitle": "Appium using Java",
+        "price": 100
+      }
+    ]
+  },
+  "expertise": "Automation",
+  "linkedin": "https://www.linkedin.com/in/ayush"
+}

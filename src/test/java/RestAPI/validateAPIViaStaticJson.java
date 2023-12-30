@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class validateAPIViaStaticJson {
     /*
     // given: all input details
-    //when - submit all the API - resource , Http Methos
+    //when - submit all the API - resource , Http Methods
     //Then - Validate the Response
     // content of the file(json) to String -> content of file can convert to Byte--> Byte data to String
      */
