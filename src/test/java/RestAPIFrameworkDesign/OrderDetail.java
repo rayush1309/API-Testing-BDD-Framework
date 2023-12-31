@@ -1,4 +1,4 @@
-package RequestandResponseSpecBuilder;
+package RestAPIFrameworkDesign;
 
 public class OrderDetail {
     String country;

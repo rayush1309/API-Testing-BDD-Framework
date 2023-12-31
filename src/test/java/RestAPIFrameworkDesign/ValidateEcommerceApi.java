@@ -1,4 +1,4 @@
-package RequestandResponseSpecBuilder;
+package RestAPIFrameworkDesign;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -6,6 +6,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import pojo.LoginRequest;
 import pojo.LoginResponse;
 
@@ -15,18 +17,26 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class EcommerceAPIIntegrationTests {
+public class ValidateEcommerceApi {
+
     private static final String BASE_URL = "https://rahulshettyacademy.com";
     private static String authToken;
+    private static String productId;
+    private static String orderId;
 
-    public static void main(String[] args) {
+    @BeforeClass
+    public void setup() {
         login();
-        String productId = addProduct();
-        String orderId = createOrder(productId);
-        deleteProduct(productId);
+        productId = addProduct();
+        orderId = createOrder(productId);
     }
 
-    private static void login() {
+    @Test
+    public void testDeleteProduct() {
+        deleteProduct(productId);
+    }
+@Test
+    private void login() {
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUserEmail("ayushrajmr1301@gmail.com");
         loginRequest.setUserPassword("Test@123");
@@ -42,8 +52,8 @@ public class EcommerceAPIIntegrationTests {
 
         authToken = loginResponse.getToken().toString();
     }
-
-    private static String addProduct() {
+@Test
+    private String addProduct() {
         File imageFile = new File("/Users/aushraj/Documents/productImage_1650649488046.jpeg");
 
         RequestSpecification req = new RequestSpecBuilder()
@@ -67,8 +77,8 @@ public class EcommerceAPIIntegrationTests {
         System.out.println("Product ID: " + productId);
         return productId;
     }
-
-    private static String createOrder(String productId) {
+@Test
+    private String createOrder(String productId) {
         RequestSpecification req = new RequestSpecBuilder()
                 .setBaseUri(BASE_URL)
                 .addHeader("Authorization", authToken)
@@ -94,7 +104,7 @@ public class EcommerceAPIIntegrationTests {
         return orderId;
     }
 
-    private static void deleteProduct(String productId) {
+    private void deleteProduct(String productId) {
         RequestSpecification req = new RequestSpecBuilder()
                 .setBaseUri(BASE_URL)
                 .addHeader("Authorization", authToken)

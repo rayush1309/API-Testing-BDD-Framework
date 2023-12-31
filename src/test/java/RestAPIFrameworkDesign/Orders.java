@@ -1,4 +1,4 @@
-package RequestandResponseSpecBuilder;
+package RestAPIFrameworkDesign;
 
 import java.util.List;
 
